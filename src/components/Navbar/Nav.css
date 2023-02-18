@@ -1,0 +1,15 @@
+.navbrand{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 60px;
+}
+.logo{
+    height:75px;
+    width:75px;
+    border-radius:50%;
+    box-shadow: 10px 10px 150px rgb(221, 217, 217);
+}
+h3{
+    font-family: 'Trade Winds', cursive;
+}

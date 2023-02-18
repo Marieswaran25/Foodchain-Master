@@ -1,0 +1,32 @@
+.card-overlay{
+    background: rgba(0, 0, 0, 0.7);
+    height: auto;
+}
+.bg-img{
+    background: url('./bg.jpg');
+    background-repeat: no-repeat;
+    background-size:cover ;
+    height: auto;
+}
+.side-content{
+    margin-left: auto;
+}
+input{
+    height:50px
+}
+label
+{
+    font-family: 'Lexend Peta', sans-serif;
+}
+.Submit{
+    height:60px;
+    font-family: 'Lexend Peta', sans-serif;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#head{
+    font-family: 'Lexend Peta', sans-serif;
+}
