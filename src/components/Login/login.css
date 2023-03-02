@@ -1,26 +1,29 @@
-.card-overlay{
-    background: rgba(0, 0, 0, 0.7);
-    height: auto;
+::placeholder {
+    color:rgb(254, 0, 0);
+    opacity: 1;
 }
-.bg-img{
+  
+.card-overlay2{
+    background: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+}
+.bg-img2{
     background: url('./bg.jpg');
     background-repeat: no-repeat;
     background-size:cover ;
-    height: auto;
+    height: 100vh;
 }
 .side-content{
     margin-left: auto;
 }
-input{
-    height:50px
-}
-input::placeholder{
-    color:white
-}
-#email, #pass, #cpass,#firstname,#lastname,#mobile{
+ 
+#Email,#password{
     height:50px;
     background-color: rgba(232, 232, 232, 0);
     color: white;
+}
+input::placeholder{
+    color: yellow;
 }
 label
 {
@@ -37,4 +40,23 @@ label
 }
 #head{
     font-family: 'Lexend Peta', sans-serif;
+}
+.loginpage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a{
+    color: coral;
+    text-decoration: none;
+    font-family: 'Lexend Peta', sans-serif;
+}
+a:hover {
+    color: white;
+
+  }
+.alink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

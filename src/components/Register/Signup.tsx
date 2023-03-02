@@ -3,9 +3,8 @@ import { Button, Container, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./signup.css";
 import axios from "axios";
-
 const Signup = () => {
-  const [info, setData]: any = useState({
+ const [info, setData]: any = useState({
     email: "",
     pass: "",
     firstname: "",
@@ -13,20 +12,19 @@ const Signup = () => {
     mobile: "",
     cpass: "",
   });
-  const handle = (e: any) => {
+  const handleSignup = (e: any) => {
     const newdata: any = { ...info };
     newdata[e.target.id] = e.target.value;
     setData(newdata);
-    console.log(newdata);
   };
 
-  const handlesubmit = async (e: any) => {
+  const handlesubmit =  async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     var data = {
       Email: info.email,
       password: info.pass,
-      Firstname: info.lastname,
-      Lastname: info.firstname,
+      Firstname: info.firstname,
+      Lastname: info.lastname,
       phoneno: info.mobile,
     };
 
@@ -41,7 +39,8 @@ const Signup = () => {
     try {
       const response = await axios(config);
       alert(response.data);
-    } catch (error: any) {
+      window.open('/')
+    } catch (error:any) {
       alert(error.response.data);
     }
   };
@@ -56,6 +55,7 @@ const Signup = () => {
                 <Form
                   className="mb-4 pt-3"
                   style={{ width: "auto" }}
+                  autoComplete="off"
                   onSubmit={(e) => handlesubmit(e)}
                 >
                   <Form.Group className="mb-4">
@@ -67,7 +67,7 @@ const Signup = () => {
                       placeholder="Enter your Email"
                       id="email"
                       value={info.email}
-                      onChange={(e) => handle(e)}
+                      onChange={(e) => handleSignup(e)}
                     />
                     <Form.Text className="text-muted"></Form.Text>
                   </Form.Group>
@@ -79,7 +79,7 @@ const Signup = () => {
                       placeholder="Enter your Firstname"
                       id="firstname"
                       value={info.firstname}
-                      onChange={(e) => handle(e)}
+                      onChange={(e) => handleSignup(e)}
                     />
                     <Form.Text className="text-muted"></Form.Text>
                   </Form.Group>
@@ -91,7 +91,7 @@ const Signup = () => {
                       placeholder="Enter your Lastname"
                       id="lastname"
                       value={info.lastname}
-                      onChange={(e) => handle(e)}
+                      onChange={(e) => handleSignup(e)}
                     />
                     <Form.Text className="text-muted"></Form.Text>
                   </Form.Group>
@@ -105,7 +105,7 @@ const Signup = () => {
                       placeholder="Enter your Mobile number"
                       id="mobile"
                       value={info.mobile}
-                      onChange={(e) => handle(e)}
+                      onChange={(e) => handleSignup(e)}
                     />
                     <Form.Text className="text-muted"></Form.Text>
                   </Form.Group>
@@ -117,7 +117,7 @@ const Signup = () => {
                       placeholder="Enter your Password"
                       id="pass"
                       value={info.pass}
-                      onChange={(e) => handle(e)}
+                      onChange={(e) => handleSignup(e)}
                     />
                     <Form.Text className="text-muted"></Form.Text>
                   </Form.Group>
@@ -131,7 +131,7 @@ const Signup = () => {
                       placeholder="Confirm your Password"
                       id="cpass"
                       value={info.cpass}
-                      onChange={(e) => handle(e)}
+                      onChange={(e) => handleSignup(e)}
                     />
                     <Form.Text className="text-muted"></Form.Text>
                   </Form.Group>
@@ -159,8 +159,3 @@ const Signup = () => {
   );
 };
 export default Signup;
-// export default Signup
-// {
-//   render() {
-
-// }
