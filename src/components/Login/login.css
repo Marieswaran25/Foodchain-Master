@@ -40,6 +40,7 @@ label
 }
 #head{
     font-family: 'Lexend Peta', sans-serif;
+    font-size: 50px;
 }
 .loginpage{
     display: flex;

@@ -3,6 +3,7 @@ import { Button, Container, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./signup.css";
 import axios from "axios";
+import Navheader from "../Navbar/Nav";
 const Signup = () => {
  const [info, setData]: any = useState({
     email: "",
@@ -48,6 +49,7 @@ const Signup = () => {
   return (
     <div className="bg-img">
       <div className="card-overlay">
+        <Navheader />
         <Container>
           <div className="row">
             <div className="col-12 col-md-4">

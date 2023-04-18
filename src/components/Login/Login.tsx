@@ -3,6 +3,7 @@ import { Button, Container, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./login.css";
 import axios from "axios";
+import Navheader from "../Navbar/Nav";
 const Login = () => {
   const [logininfo, setData]: any = useState({
     Email: "",
@@ -37,10 +38,12 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-img2">
-      <div className="card-overlay2 loginpage">
+
+    <div className="bg-img">
+      <div className="card-overlay">
+      <Navheader />
         <Container>
-          <div className="row">
+          <div className="row" style={{"marginTop":"15%"}}>
             <div className="col-12 col-md-4">
               <div>
                 <Form

@@ -1,12 +1,12 @@
 .card-overlay{
     background: rgba(0, 0, 0, 0.7);
-    height: auto;
+    height: 100vh;
 }
 .bg-img{
     background: url('./bg.jpg');
     background-repeat: no-repeat;
     background-size:cover ;
-    height: auto;
+    height: 100vh;
 }
 .side-content{
     margin-left: auto;
@@ -30,11 +30,18 @@ label
     height:60px;
     font-family: 'Lexend Peta', sans-serif;
 }
-.row{
+.rows{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
 }
 #head{
     font-family: 'Lexend Peta', sans-serif;
+}
+.column{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
