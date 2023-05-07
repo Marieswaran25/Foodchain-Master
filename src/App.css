@@ -1,0 +1,84 @@
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .form-control {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 0px solid inherit;
+    border-radius: 0;
+  }
+  .form-control::placeholder{
+    font-family: 'Lexend Peta', sans-serif;
+    font-size:10px;
+  }
+  #hotelcardimg{
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .hotelcard{
+    box-shadow: 10px 10px 60px rgb(0, 0, 0);
+    width:200px
+  }
+  .font1{
+    font-family: 'Lexend Peta', sans-serif;
+    font-size: small;
+  }
+  .card-body{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap:10px
+
+  }
+  .explore{
+    font-size: small;
+    width: 100%;
+  }
+/* #scrollablelist{
+    overflow: scroll;
+    height: 100;
+}
+#scrollablelist::-webkit-scrollbar {
+    /* display: none; */
+    /* scroll-behavior: smooth; */
+  /* } */
+
+  .font2{
+    font-family: 'Trade Winds', cursive;
+
+  }
+  .font3{
+    font-family: 'Alegreya SC', serif;
+  }
+  .font4{
+    font-family: 'Koulen', cursive;
+  }
+  .rows{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.column{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.gap5{
+  gap:8px
+}
+.fl{
+  font-size: larger;
+}
+.important::first-letter{
+  color: red;
+}

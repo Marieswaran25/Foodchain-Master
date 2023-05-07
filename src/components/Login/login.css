@@ -3,16 +3,7 @@
     opacity: 1;
 }
   
-.card-overlay2{
-    background: rgba(0, 0, 0, 0.7);
-    height: 100vh;
-}
-.bg-img2{
-    background: url('./bg.jpg');
-    background-repeat: no-repeat;
-    background-size:cover ;
-    height: 100vh;
-}
+
 .side-content{
     margin-left: auto;
 }
@@ -22,25 +13,24 @@
     background-color: rgba(232, 232, 232, 0);
     color: white;
 }
-input::placeholder{
-    color: yellow;
-}
+
 label
 {
     font-family: 'Lexend Peta', sans-serif;
 }
 .Submit{
-    height:60px;
+    height:50px;
     font-family: 'Lexend Peta', sans-serif;
+    font-size: small;
 }
-.row{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 #head{
     font-family: 'Lexend Peta', sans-serif;
-    font-size: 50px;
+    font-size: calc(100% + 1vw + 1vh);
+}
+#head::first-letter{
+    color: orange;
+    font-size: calc(100% + 2vw + 1vh);
 }
 .loginpage{
     display: flex;
@@ -50,14 +40,16 @@ label
 a{
     color: coral;
     text-decoration: none;
-    font-family: 'Lexend Peta', sans-serif;
+    /* font-family: 'Lexend Peta', sans-serif; */
 }
 a:hover {
     color: white;
 
   }
-.alink{
+
+.col{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }

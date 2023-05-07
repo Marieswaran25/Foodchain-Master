@@ -3,7 +3,7 @@ import Signup from './components/Register/Signup'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './components/Login/Login';
 import Hotelspage from './components/Hotels/hotelspage';
-
+import './App.css'
 
 class App extends Component {
   

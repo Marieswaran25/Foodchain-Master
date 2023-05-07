@@ -1,12 +1,12 @@
 .card-overlay{
-    background: rgba(0, 0, 0, 0.7);
-    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+   min-height: 100vh;
 }
 .bg-img{
     background: url('./bg.jpg');
     background-repeat: no-repeat;
     background-size:cover ;
-    height: 100vh;
+    min-height: 100vh;
 }
 .side-content{
     margin-left: auto;
@@ -26,22 +26,8 @@ label
 {
     font-family: 'Lexend Peta', sans-serif;
 }
-.Submit{
-    height:60px;
-    font-family: 'Lexend Peta', sans-serif;
-}
-.rows{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-}
+
+
 #head{
     font-family: 'Lexend Peta', sans-serif;
-}
-.column{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 }

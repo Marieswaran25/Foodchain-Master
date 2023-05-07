@@ -13,3 +13,25 @@
 h3{
     font-family: 'Trade Winds', cursive;
 }
+#signin{
+    width:max-content;
+    height: max-content;
+    border: 1px solid gray;
+    padding: 10px 10px 10px 10px;
+}
+#signin:hover{
+   background-color: rgb(223, 18, 18);
+   color:white;
+   border: 1px solid rgb(145, 0, 0);
+}
+.nav1{
+    font-family: 'Lexend Peta', sans-serif;
+
+    gap: 10px;
+}
+#cart{
+    font-size: larger;
+}
+#cart:hover{
+    color:rgb(236, 121, 14) ;
+}

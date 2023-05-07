@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./signup.css";
 import axios from "axios";
 import Navheader from "../Navbar/Nav";
+import Footer from "../footer/footer";
 const Signup = () => {
  const [info, setData]: any = useState({
     email: "",
@@ -47,22 +48,26 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-img">
+   <div>
+     <div className="bg-img">
       <div className="card-overlay">
         <Navheader />
         <Container>
-          <div className="row">
-            <div className="col-12 col-md-4">
-              <div>
-                <Form
-                  className="mb-4 pt-3"
+        <div className="row rows">
+              <h1 id="head" className="text-light" style={{textAlign:"center"}}>Delivering Food and Happiness</h1>
+            </div>
+         <div className="row mt-5 rows">
+          <div className="col-md-4 col-10" style={{"width":"100%"}}>
+          <Form
+                  className="mb-2 pt-3 gap20 column"
                   style={{ width: "auto" }}
                   autoComplete="off"
                   onSubmit={(e) => handlesubmit(e)}
                 >
-                  <Form.Group className="mb-4">
-                    <Form.Label className="text-light">
-                      Email address
+             <div className="rows mt-3" style={{"justifyContent":"space-around","gap":"20px"}}>
+             <Form.Group className="mb-2">
+                    <Form.Label className="text-light font1 important">
+                      *Email address
                     </Form.Label>
                     <Form.Control
                       type="email"
@@ -71,36 +76,10 @@ const Signup = () => {
                       value={info.email}
                       onChange={(e) => handleSignup(e)}
                     />
-                    <Form.Text className="text-muted"></Form.Text>
                   </Form.Group>
-
-                  <Form.Group className="mb-4">
-                    <Form.Label className="text-light">Firstname</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Enter your Firstname"
-                      id="firstname"
-                      value={info.firstname}
-                      onChange={(e) => handleSignup(e)}
-                    />
-                    <Form.Text className="text-muted"></Form.Text>
-                  </Form.Group>
-
-                  <Form.Group className="mb-4">
-                    <Form.Label className="text-light">Lastname</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Enter your Lastname"
-                      id="lastname"
-                      value={info.lastname}
-                      onChange={(e) => handleSignup(e)}
-                    />
-                    <Form.Text className="text-muted"></Form.Text>
-                  </Form.Group>
-
-                  <Form.Group className="mb-4">
-                    <Form.Label className="text-light">
-                      Mobile Number
+                  <Form.Group className="mb-2">
+                    <Form.Label className="text-light font1 important">
+                      *Mobile Number
                     </Form.Label>
                     <Form.Control
                       type="phone"
@@ -109,11 +88,38 @@ const Signup = () => {
                       value={info.mobile}
                       onChange={(e) => handleSignup(e)}
                     />
-                    <Form.Text className="text-muted"></Form.Text>
+                  </Form.Group>
+             </div>
+
+                 <div className="rows mt-3" style={{"justifyContent":"space-evenly","gap":"20px"}}>
+                 <Form.Group className="mb-2">
+                    <Form.Label className="text-light font1 important">*Firstname</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Enter your Firstname"
+                      id="firstname"
+                      value={info.firstname}
+                      onChange={(e) => handleSignup(e)}
+                    />
                   </Form.Group>
 
-                  <Form.Group className="mb-4">
-                    <Form.Label className="text-light">Password</Form.Label>
+                  <Form.Group className="mb-2">
+                    <Form.Label className="text-light font1 important">*Lastname</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Enter your Lastname"
+                      id="lastname"
+                      value={info.lastname}
+                      onChange={(e) => handleSignup(e)}
+                    />
+                  </Form.Group>
+                 </div>
+
+                 
+
+<div className="rows mt-3" style={{"justifyContent":"space-evenly","gap":"20px"}}>
+<Form.Group className="mb-2">
+                    <Form.Label className="text-light font1 important">*Password</Form.Label>
                     <Form.Control
                       type="password"
                       placeholder="Enter your Password"
@@ -124,9 +130,9 @@ const Signup = () => {
                     <Form.Text className="text-muted"></Form.Text>
                   </Form.Group>
 
-                  <Form.Group className="mb-5">
-                    <Form.Label className="text-light">
-                      Confirm Password
+                  <Form.Group className="mb-2">
+                    <Form.Label className="text-light font1 important">
+                      *Confirm Password
                     </Form.Label>
                     <Form.Control
                       type="password"
@@ -135,29 +141,30 @@ const Signup = () => {
                       value={info.cpass}
                       onChange={(e) => handleSignup(e)}
                     />
-                    <Form.Text className="text-muted"></Form.Text>
                   </Form.Group>
+</div>
+<Form.Text className="text-danger mt-1 font3 fl">{}</Form.Text>
 
-                  <Button
+<div className="col-md-4 col-12 mt-2" style={{"justifyContent":"space-evenly","gap":"20px"}}>
+<Button
                     variant="primary"
                     type="submit"
-                    style={{ width: "100%" }}
-                    className="Submit mb-5"
+                    style={{ "width": "100%"}}
+                    className="Submit"
+                    
                   >
-                    Submit
+                    Create an Account
                   </Button>
-                </Form>
-              </div>
-            </div>
-            <div className="col-12 col-md-6 side-content">
-              <h1 className="text-light" id="head">
-                Delivering Food and Happiness!
-              </h1>
-            </div>
+</div>        
+</Form>
+
           </div>
+         </div>
         </Container>
       </div>
     </div>
+    <Footer/>
+   </div>
   );
 };
 export default Signup;

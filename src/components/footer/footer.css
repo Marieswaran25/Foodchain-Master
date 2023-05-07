@@ -1,0 +1,19 @@
+.footer{
+    height:58vh;
+    width:100%;
+    background-color: rgba(5, 3, 2, 0.972);
+}
+.footercontent{
+    height: 50%;
+}
+.gap20{
+    gap: 20px;
+}
+.gap40{
+    gap: 40px;
+}
+.credits{
+    height: 40px;
+    background-color: rgba(16, 14, 13, 0.972);
+
+}

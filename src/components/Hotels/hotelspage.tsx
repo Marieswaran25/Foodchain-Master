@@ -30,10 +30,12 @@ const loadData=async()=>{
       <div className="card-overlay">
         <Navheader />
         <Container>
-        <div className='rows'>
+        <div className='row'style={{margin:"100px"}} id="scrollablelist" >
       {
         data.map((val:any,index:number)=>{
-          return <Hotelcard name={data[index].hotelname} Address={data[index].address} contact={data[index].mobile} />
+          return (<div className='col-md-4 col-6' >
+            <Hotelcard name={data[index].hotelname} Address={data[index].address} contact={data[index].mobile} ratings={data[index].ratings} key={`card${index}`} />
+          </div>)
           
         })
       }
