@@ -1,17 +1,65 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./login.css";
 import axios from "axios";
 import Navheader from "../Navbar/Nav";
 import Footer from "../footer/footer";
+import { faCircleCheck, faCircleXmark, faEye } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Login = () => {
+  const [password,setpassword]= React.useState('password');
+
+
   const [logininfo, setData]: any = useState({
     Email: "",
     password: "",
   });
+  const [check, setCheck]: any = useState({
+    Email: <></>,
+    password: <></>,
+  })
   const handle = (e: any) => {
     setData({ ...logininfo, [e.target.id]: e.target.value });
+    if(e.target.id==='password'){
+      if(e.currentTarget.value.length===8){
+        setCheck({...check,
+          password:<FontAwesomeIcon icon={faCircleCheck} className="text-success"></FontAwesomeIcon>})
+      }
+      else if(e.currentTarget.value===''){
+        setCheck({
+              ...check,
+              Email:<></>,
+              password:<></>
+            })
+      }
+      else{
+        setCheck({...check,
+          password:<FontAwesomeIcon icon={faCircleXmark} className="text-danger"></FontAwesomeIcon>})
+      }
+    }
+    if(e.target.id==='Email'){
+      if((e.currentTarget.value!==''&& !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(e.currentTarget.value))){
+            setCheck({
+              ...check,
+              Email:<FontAwesomeIcon icon={faCircleXmark} className="text-danger"></FontAwesomeIcon>,
+            })
+           
+         }
+         else if(e.currentTarget.value===''){
+          setCheck({
+            ...check,
+            Email:<></>,
+          })
+          
+        }
+        else{
+          setCheck({
+            ...check,
+            Email:<FontAwesomeIcon icon={faCircleCheck} className="text-success"></FontAwesomeIcon>,
+          })
+        }}
   };
 
   const handlesubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -36,6 +84,9 @@ const Login = () => {
       alert(error.response.data);
     }
   };
+  function showpassword(){
+    password==='password'?setpassword('text'):setpassword('password')
+  }
 
   return (
     <div>
@@ -58,7 +109,7 @@ const Login = () => {
                 >
                   <Form.Group className="mb-4">
                     <Form.Label className="text-light important">
-                      *Email address
+                      *Email address <span>{check.Email}</span>
                     </Form.Label>
                     <Form.Control
                       type="email"
@@ -71,14 +122,18 @@ const Login = () => {
                   </Form.Group>
 
                   <Form.Group className="mb-4">
-                    <Form.Label className="text-light important">*Password</Form.Label>
+                    <Form.Label className="text-light important">*Password <span>{check.password}</span></Form.Label>
+                    <div className="rows">
                     <Form.Control
-                      type="password"
+                      type={password}
                       placeholder="Enter your Password"
                       id="password"
                       value={logininfo.password}
+
                       onChange={(e) => handle(e)}
                     />
+                    <FontAwesomeIcon icon={faEye} className="text-light" style={{marginLeft:"-30px", cursor: "pointer"}} onClick={e=>showpassword()}></FontAwesomeIcon>
+                    </div>
                     <Form.Text className="text-muted"></Form.Text>
                   </Form.Group>
 <center>
